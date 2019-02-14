@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 <%@include file="../top.jsp"%>
 <%@include file="./../../common/common.jsp"%>
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/moviePageStyle.css' />">
 </head>
 <body>
 	<div class="container">
@@ -84,7 +82,7 @@
 					<div class="row" style="text-align: center;">
 						<c:set var="col" value="0" />
 						<div class="col-md-12">
-							<div id="Carousel${pg }" class="carousel slide">
+							<div id="Carousel${pg }" class="carousel slide media-carousel">
 								<div class="carousel-inner">
 									<div class="item active">
 										<div class="row">
@@ -108,9 +106,8 @@
 										</div>
 									</div>
 									<!--.carousel-inner-->
-									<a data-slide="prev" href="#Carousel${pg }"
-										class="left carousel-control">‹</a> <a data-slide="next"
-										href="#Carousel${pg }" class="right carousel-control">›</a>
+									<a data-slide="prev" href="#Carousel${pg }"	class="left carousel-control"><i class="glyphicon glyphicon-chevron-left"></i></a>
+									<a data-slide="next" href="#Carousel${pg }" class="right carousel-control"><i class="glyphicon glyphicon-chevron-right"></i></a>
 								</div>
 								<!--.Carousel-->
 							</div>
