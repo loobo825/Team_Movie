@@ -50,6 +50,7 @@ public class MovieListController {
 		    }
 		}
 		String genres = "";
+		
 		for (int i=0; i<3; i++) {
 			switch (num[i]) {
 			case 1 : genres = genres + "ÄÚ¹Ìµð/";

@@ -29,8 +29,8 @@
 <!-- // jQuery UI 라이브러리 js파일 -->
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 
-
-
+로그인 한 회원정보 : <%=session.getAttribute("loginfo")%>
+<input type="button" value="logout" onclick="location.href='userLogout.tm'">
 <title>Palnet Ark</title>
 </head>
 <body>
@@ -75,19 +75,20 @@
 	
 	<div>
 	<c:choose>
-		<c:when test="${ugrade == null}"><!-- none acount -->
-			<input type="button" class="btn btn-info" value="Login">
+		<c:when test="${sessionScope.ugrade == null}"><!-- none acount -->
+		
+			<input type="button" class="btn btn-info" value="Login" onclick="location.href='userLogin.tm'">
 			<input type="button" class="btn btn-info" value ="Sign Up" onclick="location.href='userInsert.tm'">
 			
 		</c:when>
-		<c:when test="${ugrade == '0'}"><!-- admin acount -->
-			<a href="">Welcome! ${usid} (${uname})</a>
+		<c:when test="${sessionScope.ugrade == '0'}"><!-- admin acount -->
+			<a href="adminPage.tm">Welcome! ${sessionScope.usid} (${sessionScope.uname})</a>
 		</c:when>
-		<c:when test="${ugrade == '1'}"><!-- normal acount -->
-			<a href="">Welcome! ${usid} (${uname})</a>
+		<c:when test="${sessionScope.ugrade == '1'}"><!-- normal acount -->
+			<a href="">Welcome! ${sessionScope.usid} (${sessionScope.uname})</a>
 		</c:when>
-		<c:when test="${ugrade == '2'}"><!-- special acount -->
-			<a href="">Welcome! ${usid} (${uname})</a>
+		<c:when test="${sessionScope.ugrade == '2'}"><!-- special acount -->
+			<a href="">Welcome! ${sessionScope.usid} (${sessionScope.uname})</a>
 		</c:when>
 	</c:choose>  	
 	</div>
